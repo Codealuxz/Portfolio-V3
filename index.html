@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codealuxz - Web Developer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="icon/logo.png" sizes="32x32" type="image/png">
+    <meta name="description" content="I am Codealuxz, a web developer full-stack">
+    <meta name="keywords"
+        content="Morgan Mazza, web developer, portfolio, full-stack, HTML, CSS, JavaScript, Python, Godot, video games, codealuxz, Codealuxz, photo, code, photography">
+    <meta name="author" content="Morgan Mazza / Codealuxz">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="alexa" content="index, follow">
+    <meta name="yandex" content="index, follow">
+
+    <meta property="og:title" content="Codealuxz - Web Developer" />
+    <meta property="og:description" content="I am Codealuxz, a web developer " />
+    <meta property="og:image" content="assets/img/logo.png" />
+    <meta property="og:url" content="https://codealuxz.fr" />
+    <meta property="og:site_name" content="Codealuxz" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Codealuxz - Web Developer">
+    <link rel="preconnect" href="https://photo.codealuxz.fr">
+    <link rel="preconnect" href="https://codealuxz.fr/projects.html">
+    <link rel="preconnect" href="https://codealuxz.fr/start.html">
+    <link rel="preconnect" href="https://codealuxz.fr/contact.html">
+
+    <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://codealuxz.fr/"
+              },{
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Projets",
+                "item": "https://codealuxz.fr/projects"
+              },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Contact",
+                "item": "https://codealuxz.fr/contact"
+              },{
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Start",
+                "item": "https://codealuxz.fr/start"
+              }
+              ]
+            }
+            </script>
+    <link rel="stylesheet" href="https://use.typekit.net/iqp4tcz.css">
+</head>
+
+<body>  
+    <div class="windows">
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loading-content">
+                <img src="./assets/img/apple_logo.png" alt="Apple Logo" class="loading-logo">
+                <div class="loading-bar-container">
+                    <div class="loading-bar" id="loadingBar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container_grid"></div>
+        <header>
+            <div class="left-part">
+                <img src="./assets/img/apple_logo.png" alt="codealuxz logo" class="icon">
+                <div class="appname">Codealuxz</div>
+                <div class="actions">
+                    <p class="menu-trigger">Projects</p>
+                    <p class="menu-trigger-contact">Contact</p>
+                </div>
+            </div>
+            <div class="right-part">
+                <img src="./assets/icons/wifi.png" alt="wifi logo" class="wifi icons">
+                <img src="./assets/icons/search.png" alt="search" class="search icons">
+                <img src="./assets/icons/setting.png" alt="setting" class="setting icons">
+                <div class="date_actuel"></div>
+            </div>
+        </header>
+        
+        <!-- Menu déroulant Projects (en dehors du header) -->
+        <div class="projects-dropdown" id="projectsDropdown">
+            <div class="menu-option" data-project="irza">
+                <span>Project 1 (Irza)</span>
+            </div>
+            <div class="menu-option" data-project="sm">
+                <span>Project 2 (ServerMaker)</span>
+            </div>
+            <div class="menu-option" data-project="pb">
+                <span>Project 3 (Pixels-Board)</span>
+            </div>
+            <div class="menu-option" data-project="share">
+                <span>Project 4 (Sharealuxz)</span>
+            </div>
+            <div class="menu-separator"></div>
+            <div class="menu-option" data-project="other">
+                <span>Other Projects</span>
+            </div>
+        </div>
+        
+        <!-- Menu déroulant Contact (en dehors du header) -->
+        <div class="contact-dropdown" id="contactDropdown">
+            <div class="menu-option" data-contact="email">
+                <span>Email</span>
+            </div>
+            <div class="menu-option" data-contact="website">
+                <span>Website Request</span>
+            </div>
+            <div class="menu-separator"></div>
+            <div class="menu-option" data-contact="discord">
+                <span>Discord</span>
+            </div>
+        </div>
+        
+        <main>
+            <div class="title">
+                <p id="welcome-text">Welcome on my</p>
+                <h1 class="main" id="portfolio-text">portfolio</h1>
+            </div>
+            <div class="folder irza fld">
+                <img src="./assets/icons/folder.png" alt="" class="folder-ico">
+                <span class="folder-name">Project 1</span>
+                <p class="alt">(Irza)</p>
+            </div>
+            <div class="folder sm fld">
+                <img src="./assets/icons/folder.png" alt="" class="folder-ico">
+                <span class="folder-name">Project 2</span>
+                <p class="alt">(ServerMaker)</p>
+            </div>
+            <div class="folder pb fld">
+                <img src="./assets/icons/folder.png" alt="" class="folder-ico">
+                <span class="folder-name">Project 3</span>
+                <p class="alt">(Pixels-Board)</p>
+            </div>
+            <div class="folder share fld">
+                <img src="./assets/icons/folder.png" alt="" class="folder-ico">
+                <span class="folder-name">Project 4</span>
+                <p class="alt">(Sharealuxz)</p>
+            </div>
+            <div class="folder other fld">
+                <img src="./assets/icons/safari.png" alt="" class="folder-ico">
+                <span class="folder-name">Other Projects</span>
+            </div>
+            <div class="folder trash fld">
+                <img src="./assets/icons/trash.png" alt="" class="folder-ico">
+                <span class="folder-name">Trash</span>
+            </div>
+            <div class="folder discord-app fld">
+                <img src="./assets/icons/discord.png" alt="" class="folder-ico">
+                <span class="folder-name">Discord</span>
+                <p class="alt">(Community)</p>
+            </div>
+            <div class="folder contact-app fld">
+                <img src="./assets/icons/contact.png" alt="" class="folder-ico">
+                <span class="folder-name">Contact</span>
+            </div>
+            <div class="folder photos-app fld">
+                <img src="./assets/icons/photo.png" alt="" class="folder-ico">
+                <span class="folder-name">Photos</span>
+                <p class="alt">(Gallery)</p>
+            </div>
+            <div class="folder calculator-app fld">
+                <img src="./assets/icons/calculator.png" alt="" class="folder-ico">
+                <span class="folder-name">Calculator</span>
+            </div>
+            
+            <div class="finder-modal">
+                <div class="finder-windows" id="finder">
+                    <div class="sidebar">
+                        <div class="sb-header">
+                            <div class="dots">
+                                <div class="dotr"></div>
+                                <div class="doty"></div>
+                                <div class="dotg"></div>
+                            </div>
+                        </div>
+                        <div class="explorer">
+                            <span>Last <hr></span>
+                            <div class="folder-finder">Project 1</div>
+                            <div class="folder-finder">Project 2</div>
+                            <div class="folder-finder">Project 3</div>
+                            <div class="folder-finder">Project 4</div>
+                            <span>Systeme<hr></span>
+                            <div class="trash-finder">Trash</div>
+                        </div>
+                    </div>
+                    <div class="files">
+                        <div class="header">
+                            <div class="prj1 header-content">
+                                <h1>Irza Drone</h1>
+                                <p>Cient landing page for a drone show</p>
+                            </div>
+                            <div class="prj2 header-content">
+                                <h1>ServerMaker</h1>
+                                <p>An AI able to build Discord servers</p>
+                            </div>
+                            <div class="prj3 header-content">
+                                <h1>Pixels-Board</h1>
+                                <p>A website who recreat the experience of a r/place on a infinit canva</p>
+                            </div>
+                            <div class="prj4 header-content">
+                                <h1>Sharealuxz</h1>
+                                <p>A service that allows the transfer of files</p>
+                            </div>
+                            <div class="trash header-content">
+                                <h1>Trash</h1>
+                                <p>Deleted files and old versions</p>
+                            </div>
+                        </div>
+                        <div class="filemanage">
+                            <div class="prj1 fils_content">
+                                <div onclick="window.open('https://irza.codealuxz.site', '_blank')" class="folder link_file">
+                                    <img src="./assets/icons/safari.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">irza.codealuxz.site</span>
+                                </div>
+                                <div onclick="window.open('https://www.figma.com/community/file/1536133756524422610/irza', '_blank')" class="folder figma_file">
+                                    <img  src="./assets/icons/figma.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">irza.figma</span>
+                                </div>
+                                <div class="folder note_file" data-note="commprj1">
+                                    <img src="./assets/icons/note.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">Client_Comment.txt</span>
+                                </div>
+                            </div>
+                            <div class="prj2 fils_content">
+                                <div onclick="window.open('https://servermaker.codealuxz.fr', '_blank')" class="folder link_file">
+                                    <img src="./assets/icons/safari.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">servermaker.<br>codealuxz.fr</span>
+                                </div>
+                                <div class="folder note_file" data-note="commprj2">
+                                    <img src="./assets/icons/note.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">Project_Concept.txt</span>
+                                </div>
+                            </div>
+                            <div class="prj3 fils_content">
+                                <div onclick="window.open('https://pixels-board.codealuxz.fr', '_blank')" class="folder link_file">
+                                    <img src="./assets/icons/safari.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">pixels-board.<br>codealuxz.fr</span>
+                                </div>
+                                <div onclick="window.open('https://discord.gg/C2BASVSQ4H', '_blank')" class="folder link_file">
+                                    <img src="./assets/icons/discord.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">Pixels-Board<br>community</span>
+                                </div>
+                                <div class="folder note_file" data-note="commprj3">
+                                    <img src="./assets/icons/note.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">Project_Concept.txt</span>
+                                </div>
+                            </div>
+                            <div class="prj4 fils_content">
+                                <div onclick="window.open('https://sharealuxz.codealuxz.fr', '_blank')" class="folder link_file">
+                                    <img src="./assets/icons/safari.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">sharealuxz.<br>codealuxz.fr</span>
+                                </div>
+                                <div onclick="window.open('https://github.com/Codealuxz/Sharealuxz', '_blank')" class="folder link_file">
+                                    <img src="./assets/icons/github.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">sharealuxz (repo)</span>
+                                </div>
+                                <div class="folder note_file" data-note="commprj4">
+                                    <img src="./assets/icons/note.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">Project_Concept.txt</span>
+                                </div>
+                            </div>
+                            <div class="trash fils_content">
+                                <div onclick="window.open('https://v2.codealuxz.fr', '_blank')" class="folder link_file deleted_file">
+                                    <img src="./assets/icons/safari.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">My Old portfolio</span>
+                                </div>
+                                <div onclick="window.open('https://v1.codealuxz.fr', '_blank')" class="folder link_file deleted_file">
+                                    <img src="./assets/icons/safari.png" alt="" class="folder-ico">
+                                    <span class="folder-name-file">My V1 portfolio</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div class="dock">
+            <div class="dock-container">
+                <div class="dock-item" data-app="finder">
+                    <img src="./assets/icons/finder.png" alt="Finder" class="dock-icon">
+                    <span class="dock-label">Finder</span>
+                </div>
+                <div class="dock-item" data-app="photos">
+                    <img src="./assets/icons/photo.png" alt="Photos" class="dock-icon">
+                    <span class="dock-label">Photos</span>
+                </div>
+                <div class="dock-item" data-app="calculator">
+                    <img src="./assets/icons/calculator.png" alt="Calculator" class="dock-icon">
+                    <span class="dock-label">Calculator</span>
+                </div>
+                <div class="dock-item" data-app="contact">
+                    <img src="./assets/icons/contact.png" alt="Contact" class="dock-icon">
+                    <span class="dock-label">Contact</span>
+                </div>
+                <div class="dock-item" data-app="trash">
+                    <img src="./assets/icons/trash.png" alt="Trash" class="dock-icon">
+                    <span class="dock-label">Trash</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note-modal" id="noteModal">
+            <div class="note-window" id="noteWindow">
+                <div class="note-header">
+                    <div class="note-dots">
+                        <div class="note-dotr"></div>
+                        <div class="note-doty"></div>
+                        <div class="note-dotg"></div>
+                    </div>
+                </div>
+                <div class="note-content">
+                   </div>
+            </div>
+        </div>
+        
+        <!-- Fenêtre modale de contact -->
+        <div class="contact-modal" id="contactModal">
+            <div class="contact-window" id="contactWindow">
+                <div class="contact-header">
+                    <div class="contact-dots">
+                        <div class="contact-dotr"></div>
+                        <div class="contact-doty"></div>
+                        <div class="contact-dotg"></div>
+                    </div>
+                    <div class="contact-title">Contact</div>
+                </div>
+                <div class="contact-content">
+                    <h2>Get in touch</h2>
+                    <p>Feel free to reach out to me through any of these channels:</p>
+                    
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:contact@codealuxz.fr">contact@codealuxz.fr</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>Website Request</h3>
+                        <p>Need a website? Fill out our form:</p>
+                        <a href="https://tally.so/forms/nG5BD2" target="_blank" class="contact-link">Create a website →</a>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>Discord</h3>
+                        <p>Join our community or send me a message:</p>
+                        <a href="https://discord.com/users/1054876714301411390" target="_blank" class="contact-link">Discord Profile →</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Fenêtre modale de photos -->
+        <div class="photos-modal" id="photosModal">
+            <div class="photos-window" id="photosWindow">
+                <div class="photos-header">
+                    <div class="photos-dots">
+                        <div class="photos-dotr"></div>
+                        <div class="photos-doty"></div>
+                        <div class="photos-dotg"></div>
+                    </div>
+                    <div class="photos-title">Photos</div>
+                    <div class="photos-segments">
+                        <button class="seg active" type="button">All</button>
+                        <button class="seg" type="button">Favorites</button>
+                    </div>
+                </div>
+                <div class="photos-content">
+                    <div class="photos-grid"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Fenêtre modale de calculatrice -->
+        <div class="calculator-modal" id="calculatorModal">
+            <div class="calculator-window" id="calculatorWindow">
+                <div class="calculator-header">
+                    <div class="calculator-dots">
+                        <div class="calculator-dotr"></div>
+                        <div class="calculator-doty"></div>
+                        <div class="calculator-dotg"></div>
+                    </div>
+                    <div class="calculator-title">Calculator</div>
+                </div>
+                <div class="calculator-content">
+                    <div class="calculator-display">
+                        <div class="calculator-result" id="calculatorResult">0</div>
+                    </div>
+                    <div class="calculator-buttons">
+                        <button class="calc-btn calc-clear" data-action="clear">AC</button>
+                        <button class="calc-btn calc-sign" data-action="sign">±</button>
+                        <button class="calc-btn calc-percent" data-action="percent">%</button>
+                        <button class="calc-btn calc-operator" data-action="divide">÷</button>
+                        
+                        <button class="calc-btn calc-number" data-number="7">7</button>
+                        <button class="calc-btn calc-number" data-number="8">8</button>
+                        <button class="calc-btn calc-number" data-number="9">9</button>
+                        <button class="calc-btn calc-operator" data-action="multiply">×</button>
+                        
+                        <button class="calc-btn calc-number" data-number="4">4</button>
+                        <button class="calc-btn calc-number" data-number="5">5</button>
+                        <button class="calc-btn calc-number" data-number="6">6</button>
+                        <button class="calc-btn calc-operator" data-action="subtract">−</button>
+                        
+                        <button class="calc-btn calc-number" data-number="1">1</button>
+                        <button class="calc-btn calc-number" data-number="2">2</button>
+                        <button class="calc-btn calc-number" data-number="3">3</button>
+                        <button class="calc-btn calc-operator" data-action="add">+</button>
+                        
+                        <button class="calc-btn calc-number calc-zero" data-number="0">0</button>
+                        <button class="calc-btn calc-number" data-number=".">.</button>
+                        <button class="calc-btn calc-equals" data-action="equals">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="./js/script.js"></script>
+
+<!-- Lightbox pour Photos -->
+<div class="lightbox" id="photosLightbox" style="display:none">
+    <div class="lightbox-backdrop"></div>
+    <img class="lightbox-image" alt="preview" />
+    <button class="lightbox-close" type="button" aria-label="Close">✕</button>
+</div>
+
+<!-- Lightbox vidéo -->
+<div class="video-lightbox" id="videoLightbox" style="display:none">
+    <div class="video-backdrop"></div>
+    <div class="video-container">
+        <video class="video-player" id="videoPlayer" controls playsinline loop></video>
+        <button class="video-close" type="button" aria-label="Close">✕</button>
+    </div>
+    
+    
+</div>
+
+</html>
