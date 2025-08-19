@@ -32,10 +32,11 @@
     display: flex;
     flex-direction: row-reverse;
     width: 100%;
+    filter: invert(1);
   }
   .right-part .date_actuel{
     position: absolute;
-    left: 30px;
+    left: 0px;
   }
   .dilan{
     width: 100%;
