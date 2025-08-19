@@ -143,7 +143,9 @@ body {
 
 
 
-
+.dilan{
+    display: none;
+}
 
 header {
     width: 100%;
@@ -327,6 +329,11 @@ header {
 
 .right-part .search {
     height: 18px;
+}
+
+.right-part .batterie{
+    height: 28px;
+    display: none;
 }
 
 .right-part .date_actuel {

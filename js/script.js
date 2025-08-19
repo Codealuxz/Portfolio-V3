@@ -71,14 +71,18 @@ function updateTime() {
     const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
 
-    const day = now.getDate();
-    const monthNames = [
-        'janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin',
-        'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'
-    ];
-    const month = monthNames[now.getMonth()];
-
-    timeElement.textContent = `${day} ${month} ${hours}:${minutes}`;
+    if (window.innerWidth < 900) {
+        // Affiche seulement l'heure si la largeur est inférieure à 500px
+        timeElement.textContent = `${hours}:${minutes}`;
+    } else {
+        const day = now.getDate();
+        const monthNames = [
+            'janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin',
+            'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'
+        ];
+        const month = monthNames[now.getMonth()];
+        timeElement.textContent = `${day} ${month} ${hours}:${minutes}`;
+    }
 }
 
 
@@ -604,6 +608,27 @@ function initFinderModal() {
         }
     }
 
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+    function openFolderByClass(folder, index) {
+        if (folder.classList.contains('trash')) {
+            openFinderModal(0);
+            setTimeout(() => { showTrash(); }, 100);
+        } else if (folder.classList.contains('discord-app')) {
+            window.open('https://discord.gg/nH9fWynF96', '_blank');
+        } else if (folder.classList.contains('contact-app')) {
+            openContactWindow();
+        } else if (folder.classList.contains('photos-app')) {
+            openPhotosWindow();
+        } else if (folder.classList.contains('other')) {
+            window.open('https://projects.codealuxz.fr', '_blank');
+        } else if (folder.classList.contains('calculator-app')) {
+            openCalculatorWindow();
+        } else {
+            openFinderModal(index);
+        }
+    }
+
     folders.forEach((folder, index) => {
         let clickTimeout;
         let clickCount = 0;
@@ -623,6 +648,12 @@ function initFinderModal() {
         });
         
         folder.addEventListener('click', (e) => {
+            if (isTouchDevice) {
+                e.preventDefault();
+                e.stopPropagation();
+                openFolderByClass(folder, index);
+                return;
+            }
             if (isLongPress) {
                 return; 
             }
@@ -653,31 +684,7 @@ function initFinderModal() {
         folder.addEventListener('dblclick', (e) => {
             clearTimeout(clickTimeout);
             clickCount = 0;
-            
-            if (folder.classList.contains('trash')) {
-                console.log('Double-clic sur le dossier Trash du bureau');
-                openFinderModal(0);
-                setTimeout(() => {
-                    showTrash(); 
-                }, 100);
-            } else if (folder.classList.contains('discord-app')) {
-                console.log('Ouverture de Discord');
-                window.open('https://discord.gg/nH9fWynF96', '_blank');
-            } else if (folder.classList.contains('contact-app')) {
-                console.log('Ouverture de la fenêtre de contact');
-                openContactWindow();
-            } else if (folder.classList.contains('photos-app')) {
-                console.log('Ouverture de la galerie Photos');
-                openPhotosWindow();
-            } else if (folder.classList.contains('other')) {
-                console.log('Ouverture Other Projects');
-                window.open('https://projects.codealuxz.fr', '_blank');
-            } else if (folder.classList.contains('calculator-app')) {
-                console.log('Ouverture de la calculatrice');
-                openCalculatorWindow();
-            } else {
-                openFinderModal(index);
-            }
+            openFolderByClass(folder, index);
         });
     });
 
@@ -1461,6 +1468,7 @@ document.addEventListener('DOMContentLoaded', () => {
 (function () {
     const TOP_Z_START = 10;
     let topZ = TOP_Z_START;
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
     function ensurePositioning(el) {
         const cs = getComputedStyle(el);
@@ -1527,6 +1535,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initAll() {
+        if (isTouchDevice) return; // Do not make desktop icons draggable on touch devices
         document.querySelectorAll('.fld').forEach(makeDraggable);
     }
 
@@ -1537,6 +1546,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const mo = new MutationObserver((muts) => {
+        if (isTouchDevice) return; // Skip on touch devices
         for (const m of muts) {
             m.addedNodes.forEach((n) => {
                 if (!(n instanceof Element)) return;
