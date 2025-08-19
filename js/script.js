@@ -101,7 +101,9 @@ class HoverOutlineEffect {
         this.mouseY = 0;
         this.maxDistance = options.maxDistance || 100;
         this.maxOutlineWidth = options.maxOutlineWidth || 10;
-        this.maxLetterSpacing = options.maxLetterSpacing || 9;
+        this.maxLetterSpacing = options.maxLetterSpacing || 12;
+        this.rafId = null;
+        this.needsUpdate = false;
 
         this.init();
     }
@@ -135,7 +137,7 @@ class HoverOutlineEffect {
             if (this.isHovering) {
                 this.mouseX = e.clientX;
                 this.mouseY = e.clientY;
-                this.updateOutlines();
+                this.requestUpdate();
             }
         });
 
@@ -164,7 +166,22 @@ class HoverOutlineEffect {
             if (this.isHovering) {
                 this.mouseX = e.clientX;
                 this.mouseY = e.clientY;
-                this.updateOutlines();
+                this.requestUpdate();
+            }
+        });
+    }
+
+    requestUpdate() {
+        if (!this.isHovering) return;
+        this.needsUpdate = true;
+        if (this.rafId !== null) return;
+        this.rafId = requestAnimationFrame(() => {
+            this.rafId = null;
+            if (!this.needsUpdate) return;
+            this.needsUpdate = false;
+            this.updateOutlines();
+            if (this.isHovering) {
+                this.requestUpdate();
             }
         });
     }
@@ -186,12 +203,12 @@ class HoverOutlineEffect {
                 const outlineWidth = Math.max(0, intensity * this.maxOutlineWidth);
                 const letterSpacing = Math.max(0, intensity * this.maxLetterSpacing);
 
-                letter.style.webkitTextStroke = `${outlineWidth}px var(--text-color)`;
-                letter.style.textStroke = `${outlineWidth}px var(--text-color)`;
+                letter.style.webkitTextStroke = `${outlineWidth}px var(--background-color)`;
+                letter.style.textStroke = `${outlineWidth}px var(--background-color)`;
                 letter.style.letterSpacing = `${letterSpacing}px`;
             } else {
-                letter.style.webkitTextStroke = '0px var(--text-color)';
-                letter.style.textStroke = '0px var(--text-color)';
+                letter.style.webkitTextStroke = '0px var(--background-color)';
+                letter.style.textStroke = '0px var(--background-color)';
                 letter.style.letterSpacing = '0px';
             }
         });
@@ -226,12 +243,12 @@ class HoverOutlineEffect {
                     const outlineWidth = Math.max(0, intensity * this.maxOutlineWidth);
                     const letterSpacing = Math.max(0, intensity * this.maxLetterSpacing);
 
-                    letter.style.webkitTextStroke = `${outlineWidth}px var(--text-color)`;
-                    letter.style.textStroke = `${outlineWidth}px var(--text-color)`;
+                    letter.style.webkitTextStroke = `${outlineWidth}px var(--background-color)`;
+                    letter.style.textStroke = `${outlineWidth}px var(--background-color)`;
                     letter.style.letterSpacing = `${letterSpacing}px`;
                 } else {
-                    letter.style.webkitTextStroke = '0px var(--text-color)';
-                    letter.style.textStroke = '0px var(--text-color)';
+                    letter.style.webkitTextStroke = '0px var(--background-color)';
+                    letter.style.textStroke = '0px var(--background-color)';
                     letter.style.letterSpacing = '0px';
                 }
             });
@@ -240,8 +257,8 @@ class HoverOutlineEffect {
 
     resetOutlines() {
         this.letters.forEach(letter => {
-            letter.style.webkitTextStroke = '0px var(--text-color)';
-            letter.style.textStroke = '0px var(--text-color)';
+            letter.style.webkitTextStroke = '0px var(--background-color)';
+            letter.style.textStroke = '0px var(--background-color)';
             letter.style.letterSpacing = '0px';
         });
     }
@@ -523,8 +540,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (portfolioText) new HoverOutlineEffect(portfolioText, {
-        maxOutlineWidth: 7,
-        maxLetterSpacing: 9
+        maxOutlineWidth: 6,
+        maxLetterSpacing: 12
     });
 
     initFinderModal();

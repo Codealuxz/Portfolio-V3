@@ -11,8 +11,8 @@
     --header-color: #ECEBE7;
     --base-color: #202020;
     --text-color: #0C0C0C;
-    --border-color: #bbbbbb;
-    --accent-color: #43b4ff;
+    --border-color: #797979;
+    --accent-color: #4396cd;
     --border-radius: 10px;
 }
 
@@ -118,9 +118,8 @@ body {
     height: 100%;
     --color: #E1E1E1;
     background-color: transparent;
-    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
-        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
-    background-size: 55px 55px;
+    background-image: url(../assets/img/back2.png);
+    background-size: cover;
 }
 
 
@@ -225,6 +224,7 @@ header {
     overflow: hidden;
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     padding: 0px;
+    margin-top: -1px;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
 }
 
@@ -293,6 +293,7 @@ header {
     z-index: 10000;
     opacity: 1;
     height: 0;
+    margin-top: -1px;
     visibility: hidden;
     overflow: hidden;
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -368,6 +369,7 @@ main {
     position: absolute;
     top: calc(50% - 50px);
     transform: translate(0, -50%);
+    color: var(--background-color);
 }
 
 .title .main {
@@ -383,8 +385,8 @@ main {
 .title .main .letter {
     display: inline-block;
     transition: all 0.3s ease;
-    -webkit-text-stroke: 0px var(--text-color);
-    text-stroke: 0px var(--text-color);
+    -webkit-text-stroke: 0px var(--background-color);
+    text-stroke: 0px var(--background-color);
 }
 
 .title p {
@@ -396,8 +398,8 @@ main {
 .title p .letter {
     display: inline-block;
     transition: all 0.3s ease;
-    -webkit-text-stroke: 0px var(--text-color);
-    text-stroke: 0px var(--text-color);
+    -webkit-text-stroke: 0px var(--background-color);
+    text-stroke: 0px var(--background-color);
 }
 
 .folder {
@@ -409,6 +411,7 @@ main {
     position: absolute;
     cursor: pointer;
     z-index: 1;
+    color: var(--background-color);
     transition: .3s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 .folder::before {
@@ -800,6 +803,11 @@ main {
     background-color: var(--background-color);
     position: relative;
 }
+
+.filemanage *{
+    color: var(--text-color) !important;
+}
+
 .fils_content{
     display: grid;
         grid-template-columns: repeat(auto-fit,130px);
@@ -1425,7 +1433,7 @@ content: "";
     align-items: center;
     gap: 8px;
     background: rgba(255, 255, 255, 0.119);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 8px 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -1501,8 +1509,7 @@ content: "";
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%, rgba(255,255,255,0.1) 100%);
-    border-radius: 8px;
+     border-radius: 8px;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
