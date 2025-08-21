@@ -407,6 +407,13 @@ main {
     color: var(--background-color);
 }
 
+.title button{
+    background-color: var(--background-color);
+    border: var(--border-color) solid 1px;
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+}
+
 .title .main {
     font-family: "instrument-serif", sans-serif;
     font-weight: 500;
