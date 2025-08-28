@@ -526,19 +526,24 @@ main {
 }
 
 .folder.sm{
-    top: 15%;
-    left: 10%;
+    top: 13%;
+    left: 7%;
 }
 .folder.pb {
-    top: 45%;
-    left: 20%;
+    top: 40%;
+    left: 22%;
 }
 
 .folder.share {
-    top: 75%;
-    left: 5%;
+    top: 65%;
+    left: 8%;
 }
 
+
+.folder.noo {
+    bottom: 10%;
+    left: 30%;
+}
 
 .folder.trash {
     top: 80%;
@@ -552,12 +557,12 @@ main {
 
 .folder.contact-app{
     top: 65%;
-    left: 40%;
+    left: 47%;
 }
 
 .folder.photos-app{
     top: 45%;
-    right: 15%;
+    right: 18%;
 }
 
 .folder.calculator-app{

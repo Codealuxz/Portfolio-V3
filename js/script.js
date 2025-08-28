@@ -282,7 +282,7 @@ function createNoteWindow(noteType) {
     switch(noteType) {
         case 'commprj1':
             noteContent = `
-                <p>Pas finit</p>
+                <p>Pas encore fini</p>
             `;
             noteTitle = 'Client_Comment.txt';
             break;
@@ -326,6 +326,12 @@ function createNoteWindow(noteType) {
                 </ul>
             `;
             noteTitle = 'Project_Concept.txt';
+            break;
+        case 'commprj5':
+            noteContent = `
+                <p>Vraiment clean, du bon boulot à un prix très abordable</p>
+            `;
+            noteTitle = 'Client_Comment.txt';
             break;
     }
     
@@ -1860,6 +1866,9 @@ function openProjectFromMenu(project) {
             break;
         case 'share':
             openFinderModal(3);
+            break;
+        case 'noo':
+            openFinderModal(4);
             break;
         case 'other':
             window.open('https://projects.codealuxz.fr', '_blank');
