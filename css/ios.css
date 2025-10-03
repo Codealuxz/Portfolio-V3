@@ -105,8 +105,8 @@
       top: 40% !important;
       right: 40% !important;
   }
-.folder.photos-app {
-      top: 40%;
+.folder.noo {
+      top: 3%;
       left: 70%;
   }
   .folder.calculator-app {
@@ -128,6 +128,10 @@
       top: 70%;
       left: 10%;
   }
+    .folder.photos-app {
+      top: 70%;
+      left: 41%;
+    }
   
 .folder.other{
     top: 8%;

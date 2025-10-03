@@ -282,7 +282,8 @@ function createNoteWindow(noteType) {
     switch(noteType) {
         case 'commprj1':
             noteContent = `
-                <p>Pas encore fini</p>
+                <p>Codealuxz, merci pour ton professionnalisme.</p>
+<p>Un jeune développeur plein de talents qui a su exécuter mes demandes avec précision et réactivité. Il m’a grandement aidé à donner vie à mon idée.<br> Que ce soit en développement ou en UX, il a déjà de solides compétences et de nombreuses cordes à son arc. Un grand merci pour tout !</p>
             `;
             noteTitle = 'Client_Comment.txt';
             break;
