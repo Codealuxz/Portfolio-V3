@@ -211,15 +211,8 @@
 scale: 0.8;
   }
 }
-
-@media (max-height: 732px) {
-    .windows {
-            scale: 0.7;
-        }
-}
-
 @media (max-width: 731px) and (max-width: 400px){
     .windows {
             scale: 0.7;
-        }
+    }
 }
