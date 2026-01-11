@@ -1482,7 +1482,7 @@ content: "";
     background: rgba(255, 255, 255, 0.119);
     backdrop-filter: blur(10px);
     border-radius: 16px;
-    padding: 8px 12px;
+    padding: 5px 8px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
     pointer-events: auto;
@@ -1496,7 +1496,7 @@ content: "";
     align-items: center;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    padding: 4px;
+    padding: 0px;
     border-radius: 8px;
 }
 
@@ -1510,8 +1510,8 @@ content: "";
 }
 
 .dock-icon {
-    width: 48px;
-    height: 48px;
+    width: 58px;
+    height: 58px;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     transition: all 0.3s ease;
@@ -1595,5 +1595,11 @@ content: "";
     
     .dock-item:hover {
         transform: scale(1.1) translateY(-4px);
+    }
+}
+
+@media (min-width: 1921px) {
+    .windows *{
+        scale: 1.1;
     }
 }
